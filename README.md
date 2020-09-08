@@ -9,6 +9,10 @@ git clone https://github.com/ganatan/flask-example-starter.git
 # change directory
 cd flask-example-starter
 
+# Linux
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+
 # Windows Shell
 $env:FLASK_APP = "flaskr"
 $env:FLASK_ENV = "development"
