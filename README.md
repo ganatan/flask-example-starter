@@ -33,10 +33,10 @@ in your browser go to [http://localhost:5000](http://localhost:5000)
 ### Documentation
 
 English Tutorials
-- Installation - https://www.ganatan.com/tutorials/bootstrap-with-angular
+- Installation - https://www.ganatan.com/tutorials/en
 
 Tutoriels en français
-- Installation - https://www.ganatan.com/tutorials/bootstrap-avec-angular
+- Installation - https://www.ganatan.com/tutorials/
 
 - Tutoriel Python - https://www.ganatan.com/tutorials/python-avec-angular
 - Tutoriel Django - https://www.ganatan.com/tutorials/django-avec-angular
