@@ -14,7 +14,10 @@ $env:FLASK_APP = "flaskr"
 $env:FLASK_ENV = "development"
 
 # install the SQLite Database
-Flask 
+Flask create-database
+
+# Import Default Data
+Flask import-database
 
 # execute application
 flask run
