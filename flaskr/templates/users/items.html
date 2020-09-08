@@ -9,17 +9,18 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+<div class="row justify-content-center pt-2">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-4 text-center">
     {% if g.user %}
-    <span>{{ g.user['username'] }}</span>
-    <a class="action" href="{{ url_for('blog.create') }}">New</a>
+    <div class="alert alert-primary" role="alert">
+      <p class="card-text">You are Connected</p>
+      <p class="card-text"><span class="font-weight-bold">{{ g.user['username'] }}</span></p>
+    </div>
     {% endif %}
-    
   </div>
 </div>
 
-<div class="row">
+<div class="row justify-content-center pt-2 pb-4">
   <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
 
     <div class="row">
@@ -28,23 +29,20 @@
           <thead>
             <tr>
               <th style="cursor: pointer;text-align:center;">Id</th>
-              <th style="cursor: pointer;text-align:center;">Title</th>
-              <th style="cursor: pointer;text-align:center;">Body</th>
+              <th style="cursor: pointer;text-align:center;">Name</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>id</th>
-              <th>title</th>
-              <th>body</th>
+              <th style="cursor: pointer;text-align:center;">Id</th>
+              <th style="cursor: pointer;text-align:center;">Name</th>
             </tr>
           </tfoot>
           <tbody>
-            {% for post in posts %}
+            {% for item in items %}
             <tr>
-              <td style="cursor: pointer;">{{ post['id'] }}</td>
-              <td>{{ post['title'] }}</td>
-              <td>{{ post['body'] }}</td>
+              <td style="cursor: pointer;">{{ item['id'] }}</td>
+              <td>{{ item['username'] }}</td>
             </tr>
             {% endfor %}
           </tbody>

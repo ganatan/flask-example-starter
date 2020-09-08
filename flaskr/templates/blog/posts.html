@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Posts{% endblock %}</h1>
+{% if g.user %}
+<a class="action" href="{{ url_for('blog.create') }}">New</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center pt-2">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pb-4 text-center">
+    {% if g.user %}
+    <div class="alert alert-primary" role="alert">
+      <p class="card-text">You are Connected</p>
+      <p class="card-text"><span class="font-weight-bold">{{ g.user['username'] }}</span></p>
+    </div>
+    {% endif %}
+  </div>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pb-4 text-center">
+    {% if g.user %}
+    <a class="btn btn-primary" href="{{ url_for('blog.create') }}" role="button">New Post</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="row justify-content-center pt-2 pb-4">
+  <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover table-striped table-bordered table-responsive-md table-sm">
+          <thead>
+            <tr>
+              <th style="cursor: pointer;text-align:center;">Id</th>
+              <th style="cursor: pointer;text-align:center;">Title</th>
+              <th style="cursor: pointer;text-align:center;">Body</th>
+              <th style="cursor: pointer;text-align:center;">Action</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th style="cursor: pointer;text-align:center;">Id</th>
+              <th style="cursor: pointer;text-align:center;">Title</th>
+              <th style="cursor: pointer;text-align:center;">Body</th>
+              <th style="cursor: pointer;text-align:center;">Action</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            {% for item in items %}
+            <tr>
+              <td style="cursor: pointer;">{{ item['id'] }}</td>
+              <td>{{ item['title'] }}</td>
+              <td>{{ item['body'] }}</td>
+              {% if g.user['id'] == item['author_id'] %}
+              <th style="text-align:center;"><a class="action" href="{{ url_for('blog.update', id=item['id']) }}">Edit</a></th>
+              {% else %}
+              <th></th>
+              {% endif %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
