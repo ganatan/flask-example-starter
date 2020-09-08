@@ -26,7 +26,7 @@ def close_db(e=None):
 def create_database():
     db = get_db()
 
-    with current_app.open_resource("scripts/schema.sql") as f:
+    with current_app.open_resource("scripts/create.sql") as f:
         db.executescript(f.read().decode("utf8"))
 
 def import_database():
