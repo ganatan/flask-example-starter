@@ -30,12 +30,14 @@
             <tr>
               <th style="cursor: pointer;text-align:center;">Id</th>
               <th style="cursor: pointer;text-align:center;">Name</th>
+              <th style="cursor: pointer;text-align:center;">Password</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th style="cursor: pointer;text-align:center;">Id</th>
               <th style="cursor: pointer;text-align:center;">Name</th>
+              <th style="cursor: pointer;text-align:center;">Password</th>
             </tr>
           </tfoot>
           <tbody>
@@ -43,6 +45,7 @@
             <tr>
               <td style="cursor: pointer;">{{ item['id'] }}</td>
               <td>{{ item['username'] }}</td>
+              <td>{{ item['password'] }}</td>
             </tr>
             {% endfor %}
           </tbody>

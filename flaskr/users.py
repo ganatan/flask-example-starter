@@ -16,7 +16,7 @@ bp = Blueprint("users", __name__)
 def users():
     db = get_db()
     items = db.execute(
-        "SELECT id, username"
+        "SELECT id, username, password"
         " FROM user"
         " ORDER BY id ASC"
     ).fetchall()
