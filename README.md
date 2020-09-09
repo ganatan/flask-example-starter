@@ -13,11 +13,11 @@ git clone https://github.com/ganatan/flask-example-starter.git
 # change directory
 cd flask-example-starter
 
-# Linux
+# On Linux
 export FLASK_APP=flaskr
 export FLASK_ENV=development
 
-# Windows Shell
+# On Windows Shell
 $env:FLASK_APP = "flaskr"
 $env:FLASK_ENV = "development"
 
@@ -27,10 +27,10 @@ Flask create-database
 # Import Default Data
 Flask import-database
 
-# Method 1 : execute application on flask-example-starter/flaskr
+# Method 1 : Factory with flask-example-starter/flaskr/__init__.py
 flask run
 
-# Method 2 : execute application on flask-example-starter
+# Method 2 : Application with flask-example-starter/app.py
 py app.py
 
 ```
@@ -70,26 +70,30 @@ sudo apt-get install libapache2-mod-wsgi-py3 python-dev -y
 # Activate wsgi
 sudo a2enmod wsgi
 
-# Copy theses files the repo on tis directory
+# Copy all files the repo on this directory
 home/service/flask-frontend
 
-# Change the config
+# Copy the apache config on
 etc/apache2/sites-available/000-default.conf
 
-
-# Change proprietaire
+# Change persmission on Database SQLite3 File
 sudo chown -hR www-data /home/services/flask-frontend
 
 # Verifier droits ecritures sur le fichier
 sudo chmod +rwx /home/services/flask-frontend/instance/flaskr.sqlite
 
+# Create Database
 flask create-database
 
+# Import Data on Database
 flask import-database
 
+# Restart Apache
 sudo service apache2 restart
 
 ```
+
+in your browser go to [http://your-ip-address](http://your-ip-address) 
 
 
 ### Author
