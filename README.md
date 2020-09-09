@@ -30,6 +30,9 @@ Flask import-database
 # execute application
 flask run
 
+# you can execute application on flask-example-starter
+py app.py
+
 ```
 in your browser go to [http://localhost:5000](http://localhost:5000) 
 
