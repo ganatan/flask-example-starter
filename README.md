@@ -32,28 +32,32 @@ in your browser go to [http://localhost:5000](http://localhost:5000)
 # Deploy on Linux Apache
 sudo apt-get update && sudo apt-get upgrade -yes
 sudo apt install apache2 -y
-
-sudo apt-get install python3.8 --yes
-sudo apt-get install python3-pip --yes
-sudo pip3 install flask         
-
-# Verify 
 python3 --version
+sudo apt-get install python3.8 --yes !!! if not installed
 pip3 --version
 flask --version
-
+sudo apt-get install python3-pip --yes
+sudo pip3 install flask
 sudo apt-get install libapache2-mod-wsgi-py3 python-dev -y
+sudo a2enmod wsgi !!! if not installed
 
-sudo a2enmod wsgi           !!!!!!!!!!! a faire si pas installe !!!!!!!!!!!!!!! 
-
-# Repertoire 
+# Copy theses files the repo on tis directory
 home/service/flask-frontend
+
+# Change the config
 etc/apache2/sites-available/000-default.conf
 
-sudo service apache2 restart
+
+# Change proprietaire
+sudo chown -hR www-data /home/services/flask-frontend
 
 # Verifier droits ecritures sur le fichier
 sudo chmod +rwx /home/services/flask-frontend/instance/flaskr.sqlite
+
+flask create-database
+flask import-database
+
+sudo service apache2 restart
 
 
 
