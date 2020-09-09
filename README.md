@@ -27,10 +27,10 @@ Flask create-database
 # Import Default Data
 Flask import-database
 
-# execute application
+# Method 1 : execute application on flask-example-starter/flaskr
 flask run
 
-# you can execute application on flask-example-starter
+# Method 2 : execute application on flask-example-starter
 py app.py
 
 ```
